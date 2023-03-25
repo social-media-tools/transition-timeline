@@ -1,3 +1,10 @@
+# Attribution
+
+This project is a fork from [Animation Timeline Control](https://github.com/ievgennaida/animation-timeline-control).
+
+Original author - **Ievgen Naida**.
+
+
 # animation-timeline-control
 
 [npm](https://www.npmjs.com/package/animation-timeline-js)
