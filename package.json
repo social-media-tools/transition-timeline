@@ -1,7 +1,7 @@
 {
-  "name": "animation-timeline-js",
-  "version": "2.3.0",
-  "description": "animation timeline control based on the canvas.",
+  "name": "transition-timeline",
+  "version": "0.0.1",
+  "description": "Transition timeline layer control for video building application",
   "main": "lib/animation-timeline.min.js",
   "types": "lib/animation-timeline.d.ts",
   "devDependencies": {
@@ -39,7 +39,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ievgennaida/js-animation-timeline-control.git"
+    "url": "git+https://github.com/social-media-tools/transition-timeline.git"
   },
   "keywords": [
     "js",
@@ -48,14 +48,15 @@
     "canvas",
     "html5",
     "no",
-    "libs",
     "keyframes",
-    "editor"
+    "editor",
+    "video-builder",
+    "transition",
+    "layer"
   ],
-  "author": "Ievgen Naida",
+  "author": ["Ievgen Naida", "Ninode97"],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ievgennaida/js-animation-timeline-control/issues"
-  },
-  "homepage": "https://ievgennaida.github.io/animation-timeline-control/index.html"
+    "url": "https://github.com/social-media-tools/transition-timeline/issues"
+  }
 }

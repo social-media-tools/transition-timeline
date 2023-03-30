@@ -5,7 +5,7 @@ This project is a fork from [Animation Timeline Control](https://github.com/ievg
 Original author - **Ievgen Naida**.
 
 
-# animation-timeline-control
+# transition-timeline
 
 [npm](https://www.npmjs.com/package/animation-timeline-js)
 
