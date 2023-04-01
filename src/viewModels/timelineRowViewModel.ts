@@ -3,6 +3,7 @@ import { TimelineGroupViewModel } from './timelineGroupViewModel';
 import { TimelineKeyframeViewModel } from './timelineKeyframeViewModel';
 
 export interface TimelineRowViewModel {
+  id: string;
   /**
    * Screen coordinates of the element.
    */

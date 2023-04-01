@@ -28,6 +28,7 @@ import { TimelineSelectionMode } from './enums/timelineSelectionMode';
 import { TimelineEvents } from './enums/timelineEvents';
 import { TimelineScrollSource } from './enums/timelineScrollSource';
 export declare class Timeline extends TimelineEventsEmitter {
+    _trackedObjects: any[];
     /**
      * component container.
      */

@@ -53,6 +53,7 @@ import { defaultTimelineConsts } from './settings/defaults/defaultTimelineConsts
 import { defaultTimelineOptions } from './settings/defaults/defaultTimelineOptions';
 
 export class Timeline extends TimelineEventsEmitter {
+  _trackedObjects: any[] = [];
   /**
    * component container.
    */
@@ -924,7 +925,8 @@ export class Timeline extends TimelineEventsEmitter {
       if (this._options?.timelineDraggable !== false) {
         // change timeline pos:
         // Set current timeline position if it's not a drag or selection rect small or fast click.
-        isChanged = this._setTimeInternal(pos.val, TimelineEventSource.User) || isChanged;
+        //isChanged = this._setTimeInternal(pos.val, TimelineEventSource.User) || isChanged;
+        console.log('prevent this behavior');
       }
     }
 
@@ -1651,6 +1653,7 @@ export class Timeline extends TimelineEventsEmitter {
       toReturn.size.height = Math.max(rowAbsoluteHeight + rowHeight, toReturn.size.height);
       const rowSize = { x: 0, y: currentRowY, width: this._canvasClientWidth(), height: rowHeight } as DOMRect;
       const rowViewModel = {
+        id: row.id,
         size: rowSize,
         marginBottom: marginBottom,
         model: row,
@@ -1660,6 +1663,7 @@ export class Timeline extends TimelineEventsEmitter {
         groupsViewModels: [],
         keyframesViewModels: [],
       } as TimelineRowViewModel;
+
       toReturn.rowsViewModels.push(rowViewModel);
       if (!row.keyframes || !row.keyframes.forEach || row.keyframes.length <= 0) {
         return;
@@ -1735,6 +1739,8 @@ export class Timeline extends TimelineEventsEmitter {
    * Render timeline rows.
    */
   _renderRows = (): void => {
+    (window as any).__DEBUG = this;
+    this._trackedObjects = [];
     if (!this._ctx) {
       return;
     }
@@ -1756,6 +1762,10 @@ export class Timeline extends TimelineEventsEmitter {
         const bounds = this._cutBounds(rowViewModel.size);
         if (bounds?.rect) {
           const rect = bounds?.rect;
+          this._trackedObjects.push({
+            ...rect,
+            id: rowViewModel.id,
+          });
           this._ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
         }
 

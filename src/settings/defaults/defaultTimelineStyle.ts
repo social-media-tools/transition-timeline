@@ -6,17 +6,18 @@ export const defaultTimelineStyle = {
   width: 2,
   marginTop: 15,
   marginBottom: 0,
-  strokeColor: 'DarkOrange',
-  fillColor: 'DarkOrange',
+  strokeColor: '#3D54A9',
+  fillColor: '#3D54A9',
+  lineDash: [5, 5],
   capStyle: {
-    width: 4,
+    width: 10,
     height: 10,
     /**
      * Draw timeline rectangular cap.
      */
     capType: TimelineCapShape.Rect,
-    strokeColor: 'DarkOrange',
-    fillColor: 'DarkOrange',
+    strokeColor: '#3D54A9',
+    fillColor: '#3D54A9',
   },
   cursor: TimelineCursorType.EWResize,
 } as TimelineStyle;
