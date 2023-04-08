@@ -921,13 +921,6 @@ export class Timeline extends TimelineEventsEmitter {
     } else {
       // deselect keyframes if any:
       isChanged = this._selectInternal(null).selectionChanged || isChanged;
-
-      if (this._options?.timelineDraggable !== false) {
-        // change timeline pos:
-        // Set current timeline position if it's not a drag or selection rect small or fast click.
-        //isChanged = this._setTimeInternal(pos.val, TimelineEventSource.User) || isChanged;
-        console.log('prevent this behavior');
-      }
     }
 
     return isChanged;
@@ -1739,7 +1732,6 @@ export class Timeline extends TimelineEventsEmitter {
    * Render timeline rows.
    */
   _renderRows = (): void => {
-    (window as any).__DEBUG = this;
     this._trackedObjects = [];
     if (!this._ctx) {
       return;
